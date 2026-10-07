@@ -1,0 +1,64 @@
+{
+  "id": "/",
+  "name": "City Con & Allied Health Sciences - Fee Management System",
+  "short_name": "CityCon Fee",
+  "description": "Official Fee Collection, Student Registry, Voucher Issuance & Double-Copy Receipt Android App for City Con & Allied Health Sciences Nowshera Virkan.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#b91c1c",
+  "background_color": "#0f172a",
+  "categories": ["education", "finance", "productivity", "management"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Collect Fee",
+      "short_name": "Deposit",
+      "description": "Deposit & collect student fee installments",
+      "url": "/?tab=fee-collection",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Add Student",
+      "short_name": "Register",
+      "description": "Enroll new student in allied health sciences",
+      "url": "/?tab=add-student",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Issue Fee Slips",
+      "short_name": "Slips",
+      "description": "Batch generate course-wise fee vouchers",
+      "url": "/?tab=course-vouchers",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Campus Dashboard",
+      "short_name": "Dashboard",
+      "description": "View fee summaries, defaulters, and metrics",
+      "url": "/?tab=dashboard",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false
+}

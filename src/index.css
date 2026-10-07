@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   INSTITUTE CORE STYLING & ONLINE CSS ENGINE
+   City Con & Allied Health Sciences - Fee Management System
+   ========================================================================== */
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Default border color to avoid transparent borders in Tailwind v4 */
+*, ::before, ::after {
+  border-color: #e2e8f0;
+}
+
+/* Tabular alignment for numbers, roll numbers, currency & dates */
+.font-mono, [data-tabular] {
+  font-family: var(--font-mono) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   BULLETPROOF FORM FIELDS & INPUT VISIBILITY
+   Guarantees 100% visible, crisp 1.5px slate borders and white background
+   without forcing display:block or width:100% which breaks layout placements.
+   ========================================================================== */
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]),
+select,
+textarea {
+  border-width: 1.5px !important;
+  border-style: solid !important;
+  border-color: #cbd5e1 !important; /* Visible slate-300 border */
+  background-color: #ffffff !important;   /* Solid white background */
+  color: #0f172a !important;              /* Solid dark text */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]):focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: #b91c1c !important; /* Institute Red focus */
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.15) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+/* Checkboxes and Radios */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: #b91c1c;
+  cursor: pointer;
+}
+
+/* Form labels */
+label {
+  color: #334155;
+}
+
+/* Interactive elements */
+button, [role="button"], a.btn {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   PRINT ENGINE (DOUBLE RECEIPT & COURSE BATCH VOUCHERS)
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm 6mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body * {
+    visibility: hidden;
+  }
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  #printable-double-receipt,
+  #printable-double-receipt *,
+  #printable-report-container,
+  #printable-report-container *,
+  #course-batch-vouchers-container,
+  #course-batch-vouchers-container * {
+    visibility: visible !important;
+  }
+
+  #printable-double-receipt,
+  #printable-report-container,
+  #course-batch-vouchers-container {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .course-slip-card {
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 4mm 0 !important;
+  }
+
+  .voucher-copy, .challan-copy {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    box-shadow: none !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

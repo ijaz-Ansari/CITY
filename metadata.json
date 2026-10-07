@@ -1,0 +1,6 @@
+{
+  "name": "City Con & Allied Health Sciences - Fee Management System",
+  "description": "Professional fee collection, student registry, ledger history, and double-copy receipt system for City Con & Allied Health Sciences Nowshera Virkan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
